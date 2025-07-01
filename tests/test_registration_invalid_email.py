@@ -1,9 +1,10 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from tests.helpers.urls import *
 
 def test_registration_with_invalid_email(driver):
-    driver.get("https://qa-desk.stand.praktikum-services.ru/")
+    driver.get(MAIN_PAGE_URL)
 
     # Шаг 1: Вход и регистрация
     driver.find_element(By.XPATH, "//button[contains(text(), 'Вход и регистрация')]").click()

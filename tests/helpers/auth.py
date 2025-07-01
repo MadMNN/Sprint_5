@@ -1,11 +1,15 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from tests.helpers.urls import *
+import random
+import string
+
 # helpers/auth.py
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 def login(driver, email, password):
-    driver.get("https://qa-desk.stand.praktikum-services.ru/")
+    driver.get(MAIN_PAGE_URL)
 
     driver.find_element(By.XPATH, "//button[contains(text(), 'Вход и регистрация')]").click()
 
@@ -22,8 +26,6 @@ def login(driver, email, password):
 
 
 # Генерация уникального email
-import random
-import string
 
 def generate_unique_email(domain='example.com'):
     """Генерирует уникальный email для регистрации."""

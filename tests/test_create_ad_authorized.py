@@ -2,10 +2,11 @@ import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from tests.helpers.urls import *
 
 def test_create_ad_authorized(driver):
     driver.maximize_window()
-    driver.get("https://qa-desk.stand.praktikum-services.ru/")
+    driver.get(MAIN_PAGE_URL)
     wait = WebDriverWait(driver, 10)
 
     # Авторизация

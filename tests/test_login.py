@@ -1,9 +1,10 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from tests.helpers.urls import *
 
 def test_user_login(driver):
-    driver.get("https://qa-desk.stand.praktikum-services.ru/")
+    driver.get(MAIN_PAGE_URL)
 
     # Нажимаем "Вход и регистрация"
     login_button = WebDriverWait(driver, 10).until(
