@@ -37,4 +37,5 @@ def test_user_logout(driver):
         EC.invisibility_of_element_located((By.XPATH, "//h3[contains(@class, 'profileText') and contains(text(), 'User.')]"))
 )
 
-#готов
+# Финальная проверка: убедиться, что кнопка входа снова отображается
+    assert driver.find_element(By.XPATH, "//button[contains(text(), 'Вход и регистрация')]").is_displayed()
